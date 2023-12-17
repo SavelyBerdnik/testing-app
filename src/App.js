@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import HomePage from './pages/HomePage';
+import FilePage from './pages/FilePage';
 
 function App() {
+  const [selectFile, setSelectFile] = useState('')
+  const [error, setError] = useState('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {error && <div className='errorReques'>{error}</div>}
+      {!selectFile ? 
+        <HomePage onFile={setSelectFile} onError={setError} />
+        : <FilePage file={selectFile} onFile={setSelectFile} onError={setError} />}
     </div>
   );
 }

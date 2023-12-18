@@ -1,11 +1,12 @@
 import React from "react";
 import './TableElements.css';
 
-const TableElements = ({content}) => {
-    console.log(content);
+const TableElements = ({file}) => {
+    console.log(file)
+        
     return (
         <table className="TableElements">
-            <thead>
+            <thead className="tableHead">
                 <tr>
                     <td>Имя</td>
                     <td>Номер телефона</td>
@@ -14,8 +15,11 @@ const TableElements = ({content}) => {
                     <td>Адрес</td>
                 </tr>
             </thead>
-            <tbody>
-                {content.map((rowElements) => <tr>{rowElements.map((el) => <td>{el}</td>)}</tr>)}
+            <tbody className="tableBody">
+                {file.map((rowElements, index) => 
+                    <tr key={index}>
+                        {rowElements.map((el, i) => <td key={i}>{el}</td>)}
+                    </tr>)}
             </tbody>
         </table>
     )

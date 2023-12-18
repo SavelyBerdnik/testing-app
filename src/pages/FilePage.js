@@ -1,12 +1,13 @@
 import React from "react";
 import Button from "../components/Button";
 import TableElements from "../components/TableElements";
+import './FilePage.css';
 
-const FilePage = ({file, onFile, onError}) => {
+const FilePage = ({file, onError}) => {
     return (
-        <div>
-            <Button text='Загрузить новый файл' onFile={onFile} onError={onError}/>
-            <TableElements content={file}/>
+        <div className="FilePage">
+            <Button text='Загрузить новый файл'  onError={onError}/>
+            <TableElements file={file} />
         </div>
     )
 }

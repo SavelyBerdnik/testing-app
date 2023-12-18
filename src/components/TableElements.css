@@ -1,3 +1,26 @@
 .TableElements {
+    width: 96vw;
     border-radius: 10px;
+    background: #fff;
+    border-collapse: collapse;
+}
+
+.TableElements td {
+    padding: 2vh 2vw;
+}
+
+.tableHead{
+    border-bottom: 2px solid #898989;
+}
+
+.tableHead td{
+    border-right: 1px solid #C0C0C0;
+}
+
+.tableBody tr{
+    border-bottom: 1px solid #C0C0C0;
+}
+
+.tableBody tr:hover{
+    background: rgba(99, 70, 180, 0.25);
 }

@@ -4,11 +4,16 @@
     align-items: center;
     flex-direction: column;
     width: 823px;
-    height: 30vh;
-    padding: 6% 0;
-    margin: auto auto;
+    height: 28vh;
+    padding: 11vh 0;
+    margin: 15vh auto;
     border-radius: 10px;
     box-shadow: 2px 4px 9.899999618530273px 0px rgba(0, 0, 0, 0.25);
     background-color: #fff;
 }
+
+.HomePage > h2 {
+    font-size: 24px;
+}
+
 

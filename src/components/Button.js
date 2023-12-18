@@ -1,7 +1,7 @@
 import React from "react";
 import './Button.css';
 
-const Button = ({text, onFile, onError}) => {
+const Button = ({text, onError}) => {
     const CheckFile = (selectFile) =>  {
         if (selectFile){
             if (selectFile.type === 'text/csv'){
@@ -9,9 +9,11 @@ const Button = ({text, onFile, onError}) => {
                 reader.readAsText(selectFile, 'CP1251')
                 reader.onload = (event) => {
                     let csvfile = event.target.result.split('\n');
-                    let file = csvfile.map((el) => el.split('"').slice(0, 2)).slice(1)
-                    file = file.map((el) => [...el[0].split(',').slice(0, 4), el[1]])
-                    onFile(file)
+                    let file = csvfile.map((el) => {
+                        let element = el.split('"').slice(0, 2)
+                        return [...element[0].split(',').slice(0, 4), element[1]]
+                    }).slice(1, csvfile.length - 1)
+                    localStorage.setItem('fileData', JSON.stringify(file))
                     onError('')
                 }
             } else {

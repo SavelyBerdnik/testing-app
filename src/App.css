@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 :root{
   background-color: #CBCBCB;
 }
 
 .App {
   font-family: 'Noto Sans';
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .errorReques {
+  font-size: 20px;
   display: inline-block;
   margin: 2% 33vw;
   padding: 2%;

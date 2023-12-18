@@ -4,15 +4,16 @@ import HomePage from './pages/HomePage';
 import FilePage from './pages/FilePage';
 
 function App() {
-  const [selectFile, setSelectFile] = useState('')
+  console.log(JSON.parse(localStorage.getItem('fileData')))
+  const [content, setContent] = useState(JSON.parse(localStorage.getItem('fileData')) || [])
   const [error, setError] = useState('')
 
   return (
     <div className="App">
       {error && <div className='errorReques'>{error}</div>}
-      {!selectFile ? 
-        <HomePage onFile={setSelectFile} onError={setError} />
-        : <FilePage file={selectFile} onFile={setSelectFile} onError={setError} />}
+      {!content.length ? 
+        <HomePage onError={setError} />
+        : <FilePage file={content} onError={setError} />}
     </div>
   );
 }

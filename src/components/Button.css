@@ -1,12 +1,13 @@
 .Button{
-    display: block;
-    padding: 2% 0;
-    width: 274px;
+    display: inline-block;
+    padding: 2.5vh 0;
+    width: 18vw;
     border: none;
     border-radius: 5px;
     background-color: #6346B4;
     color: #fff;
     text-align: center;
+    font-size: 16px;
 }
 
 .Button:hover{
@@ -19,6 +20,4 @@
 
 .Button input {
     display: none;
-    width: 274px;
-    height: 48px;
 }

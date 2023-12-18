@@ -1,7 +1,7 @@
 import React from "react";
 import './Button.css';
 
-const Button = ({text, onError}) => {
+const Button = ({text, onError, onFile}) => {
     const CheckFile = (selectFile) =>  {
         if (selectFile){
             if (selectFile.type === 'text/csv'){
@@ -14,6 +14,7 @@ const Button = ({text, onError}) => {
                         return [...element[0].split(',').slice(0, 4), element[1]]
                     }).slice(1, csvfile.length - 1)
                     localStorage.setItem('fileData', JSON.stringify(file))
+                    onFile(file)
                     onError('')
                 }
             } else {

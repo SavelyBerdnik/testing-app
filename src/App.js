@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       {error && <div className='errorReques'>{error}</div>}
       {!content.length ? 
-        <HomePage onError={setError} />
-        : <FilePage file={content} onError={setError} />}
+        <HomePage onError={setError} onFile={setContent}/>
+        : <FilePage file={content} onError={setError} onFile={setContent}/>}
     </div>
   );
 }

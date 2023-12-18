@@ -20,3 +20,23 @@
   background-color: #FF6565;
   color: #fff;
 }
+
+button {
+  display: inline-block;
+    padding: 2.5vh 0;
+    width: 18vw;
+    border: none;
+    border-radius: 5px;
+    background-color: #6346B4;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+
+button:hover{
+  background-color: #A88EF0;
+}
+
+button:active{
+  background-color: #311F63;
+}
